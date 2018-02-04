@@ -108,6 +108,17 @@ services:
       networks:
         - backend
 
+### Redis Container #########################################
+
+    redis:
+      build: ./redis
+      #volumes:
+        #- ${DATA_SAVE_PATH}/redis:/data
+      ports:
+        - "${REDIS_PORT}:6379"
+      networks:
+        - backend
+
 ### Networks Setup ############################################
 
 networks:
@@ -120,4 +131,6 @@ networks:
 
 volumes:
   mysql:
+    driver: "local"
+  redis:
     driver: "local"

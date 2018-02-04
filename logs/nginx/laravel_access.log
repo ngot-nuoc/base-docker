@@ -1,5 +1,0 @@
-192.168.99.1 - - [04/Feb/2018:05:26:28 +0000] "GET / HTTP/1.1" 200 830 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5"
-192.168.99.1 - - [04/Feb/2018:05:26:28 +0000] "GET /favicon.ico HTTP/1.1" 200 0 "http://itracking.local/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5"
-192.168.99.1 - - [04/Feb/2018:05:28:47 +0000] "GET / HTTP/1.1" 200 830 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5"
-192.168.99.1 - - [04/Feb/2018:05:39:32 +0000] "GET / HTTP/1.1" 200 830 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5"
-192.168.99.1 - - [04/Feb/2018:06:18:01 +0000] "GET / HTTP/1.1" 200 830 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5"
