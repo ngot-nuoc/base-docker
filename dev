@@ -1,0 +1,76 @@
+#!/bin/sh
+##########################################################################
+#***   Make .env file and docker-compose.yml if don't exist   ***********#
+##########################################################################
+make() {
+    env=".env"
+    yml="docker-compose.yml"
+    env_from=$1
+    yml_from=$2
+    if [ ! -f $env ]
+    then
+        cp $env_from $env
+    fi
+    if [ ! -f $yml ]
+    then
+        cp $yml_from $yml
+    fi
+}
+
+##########################################################################
+#********       Initial project to build environment          ***********#
+##########################################################################
+initProject() {
+    case "$1" in
+        itracking)
+            make "env.itracking" "docker-compose.yml.itracking"
+        ;;
+        *)
+            echo $"Project availables: $0 init {itracking}"
+            exit 1
+    esac
+}
+
+########################################################
+#***********         MAIN FUNCTION          ***********#
+########################################################
+main() {
+    dev=$0
+    option=$2;
+    case "$1" in
+        init)
+            if [ ! $2 ]
+            then
+                make "env.base" "docker-compose.yml.base"
+            else
+                initProject $option
+            fi
+        ;;
+        build)
+            docker-compose build
+        ;;
+        start)
+            docker-compose build
+            docker-compose up -d
+            docker-compose ps
+        ;;
+        run)
+            docker-compose up -d
+            docker-compose ps
+        ;;
+        status)
+            docker-compose ps
+        ;;
+        open)
+            docker-compose exec $option bash
+        ;;
+        stop)
+            docker-compose stop
+        ;;
+        *)
+            echo $"Usage: $dev {init|build|start|run|status|open|stop}"
+            exit 1
+    esac
+}
+
+main "$@"
