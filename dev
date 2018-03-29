@@ -25,8 +25,11 @@ initProject() {
         itracking)
             make "env.itracking" "docker-compose.yml.itracking"
         ;;
+        coinmarket)
+            make "env.coinmarket" "docker-compose.yml.coinmarket"
+        ;;
         *)
-            echo $"Project availables: $0 init {itracking}"
+            echo $"Project availables: $0 init {itracking|coinmarket}"
             exit 1
     esac
 }
@@ -41,8 +44,10 @@ main() {
         init)
             if [ ! $2 ]
             then
+                echo "Initial base develop environment..."
                 make "env.base" "docker-compose.yml.base"
             else
+                echo "Initial $option develop environment..."
                 initProject $option
             fi
         ;;
