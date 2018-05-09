@@ -7,6 +7,10 @@ make() {
     yml="docker-compose.yml"
     env_from=$1
     yml_from=$2
+    # Remove old .env and docker-compose.yml because it could be another project
+    rm $env
+    rm $yml
+    # Initial project configure environment
     if [ ! -f $env ]
     then
         cp $env_from $env
